@@ -59,19 +59,19 @@ def pylot_show():
     category = []  # 分类
     plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.rcParams['axes.unicode_minus'] = False
+    plt.figure(figsize=(20, 20))
     for row in rows:
         count.append(int(row[2]))
         category.append(row[1])
 
     y_pos = np.arange(len(category))  # 定义y轴坐标数
-
     plt.barh(y_pos, count, align='center', alpha=0.4)  # alpha图表的填充不透明度(0~1)之间
     plt.yticks(y_pos, category)  # 在y轴上做分类名的标记
 
     for count, y_pos in zip(count, y_pos):
         # 分类个数在图中显示的位置，就是那些数字在柱状图尾部显示的数字
         plt.text(count, y_pos, count, horizontalalignment='center', verticalalignment='center', weight='bold')
-    plt.ylim(+28.0, -1.0)  # 可视化范围，相当于规定y轴范围
+    plt.ylim(len(category), -1.0)  # 可视化范围，相当于规定y轴范围
     plt.title(u'豆瓣电影250')  # 图表的标题
     plt.ylabel(u'电影分类')  # 图表y轴的标记
     plt.subplots_adjust(bottom=0.15)
@@ -86,7 +86,7 @@ cur = conn.cursor()  # 获取操作游标
 cur.execute('use douban')  # 使用douban这个数据库
 
 douban = {}
-for x in range(10):
+for x in range(20):
     get_page(x)
 save_mysql(douban)
 pylot_show()
