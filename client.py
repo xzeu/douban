@@ -112,9 +112,9 @@ def getConfig(section, key):
 
 def login(driver):
     driver.find_element_by_id("STAFF_ID").clear()
-    driver.find_element_by_id("STAFF_ID").send_keys("zhangxy355")
+    driver.find_element_by_id("STAFF_ID").send_keys("账号")
     driver.find_element_by_id("LOGIN_PASSWORD").clear()
-    driver.find_element_by_id("LOGIN_PASSWORD").send_keys("1984Cindyzxy")
+    driver.find_element_by_id("LOGIN_PASSWORD").send_keys("密码")
     driver.find_element_by_id("LOGIN_PROVINCE_CODE").find_element_by_xpath("//option[@value='97']").click()
     driver.find_element_by_id("VERIFY_CODE").clear()
     driver.implicitly_wait(10)
