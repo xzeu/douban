@@ -76,7 +76,7 @@ def pylot_show():
     plt.ylabel(u'电影分类')  # 图表y轴的标记
     plt.subplots_adjust(bottom=0.15)
     plt.xlabel(u'分类出现次数')  # 图表x轴的标记
-    plt.show()
+    # plt.show()
     plt.savefig('douban.png')  # 保存图片
 
 
