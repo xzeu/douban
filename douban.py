@@ -46,9 +46,7 @@ def get_page(i):
                 douban[i] = 1
             else:
                 douban[i] += 1
-    # print(douban)
     return douban
-    # return keys
 
 
 def pylot_show():
@@ -59,7 +57,7 @@ def pylot_show():
     category = []  # 分类
     plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.rcParams['axes.unicode_minus'] = False
-    plt.figure(figsize=(20, 20))
+    plt.figure(figsize=(10, 10))
     for row in rows:
         count.append(int(row[2]))
         category.append(row[1])
@@ -86,9 +84,9 @@ cur = conn.cursor()  # 获取操作游标
 cur.execute('use douban')  # 使用douban这个数据库
 
 douban = {}
-for x in range(20):
-    get_page(x)
-save_mysql(douban)
+# for x in range(20):
+#     get_page(x)
+# save_mysql(douban)
 pylot_show()
 cur.close()
 conn.close()
