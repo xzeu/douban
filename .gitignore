@@ -1,0 +1,12 @@
+## 
+/all_1
+/b
+/build
+/dist
+/image
+/img
+/mnist
+/rest
+/venv
+__pycache__
+.idea
